@@ -5,7 +5,7 @@ sigue el SemVer del [README](README.md#versiones): una menor trae funciones
 nuevas y actualizar es redesplegar. Desde 1.4.0, cada tag `vX.Y.Z` publica la
 imagen `ghcr.io/kevinrivm/vocero-crm:X.Y.Z`.
 
-## 1.4.0 — 2026-09-XX
+## 1.4.0 — 2026-09-30
 
 ### Actualizar desde 1.3.0
 
