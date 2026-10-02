@@ -10,23 +10,12 @@
  * haría que una instalación fuera de su país sumara mal sin avisar.
  */
 
-/** Monedas ISO-4217 razonables para un CRM de WhatsApp hispanohablante. */
-export const CURRENCIES = [
-  "MXN",
-  "USD",
-  "EUR",
-  "COP",
-  "ARS",
-  "CLP",
-  "PEN",
-  "GTQ",
-  "DOP",
-  "BRL",
-] as const;
+/** Monedas habilitadas para esta instancia. */
+export const CURRENCIES = ["PYG", "USD"] as const;
 
 export type Currency = (typeof CURRENCIES)[number];
 
-export const DEFAULT_CURRENCY: Currency = "MXN";
+export const DEFAULT_CURRENCY: Currency = "PYG";
 
 export function isCurrency(v: unknown): v is Currency {
   return typeof v === "string" && (CURRENCIES as readonly string[]).includes(v);

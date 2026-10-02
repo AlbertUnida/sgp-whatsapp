@@ -81,9 +81,10 @@ describe("formatMoneyCents", () => {
 
 describe("catálogo de monedas", () => {
   it("valida entradas basura", () => {
-    expect(isCurrency("MXN")).toBe(true);
-    expect(isCurrency("mxn")).toBe(false);
-    expect(isCurrency("pesos")).toBe(false);
+    expect(isCurrency("PYG")).toBe(true);
+    expect(isCurrency("USD")).toBe(true);
+    expect(isCurrency("pyg")).toBe(false);
+    expect(isCurrency("MXN")).toBe(false);
     expect(isCurrency(null)).toBe(false);
   });
 });

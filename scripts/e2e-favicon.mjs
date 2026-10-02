@@ -166,9 +166,9 @@ ok("y el icono bueno sigue intacto", trasIntento.equals(PNG_1X1));
 const gigante = await api("/api/settings/branding/favicon", {
   method: "PUT",
   headers: { "content-type": "image/png" },
-  body: Buffer.alloc(300 * 1024, 1),
+  body: Buffer.alloc(600 * 1024, 1),
 });
-ok("un archivo de 300 KB → 413", gigante.status === 413, String(gigante.status));
+ok("un archivo de 600 KB → 413", gigante.status === 413, String(gigante.status));
 
 const vacio = await api("/api/settings/branding/favicon", {
   method: "PUT",
