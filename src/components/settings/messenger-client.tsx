@@ -254,7 +254,7 @@ export function MessengerClient() {
                 value={token}
                 onChange={(e) => setToken(e.target.value)}
                 placeholder={source === "zernio" ? "sk_…" : "EAAG…"}
-                autoComplete="off"
+                autoComplete="new-password"
               />
             </div>
             {source === "zernio" && (
@@ -266,7 +266,7 @@ export function MessengerClient() {
                   value={webhookSecret}
                   onChange={(e) => setWebhookSecret(e.target.value)}
                   placeholder="el mismo que pusiste en Zernio"
-                  autoComplete="off"
+                  autoComplete="new-password"
                 />
               </div>
             )}

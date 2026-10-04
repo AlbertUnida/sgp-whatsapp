@@ -208,6 +208,7 @@ function ConnectForm({
             <Input
               id="waba-id"
               placeholder="ID de la cuenta de WhatsApp Business"
+              autoComplete="off"
               value={wabaId}
               onChange={(e) => setWabaId(e.target.value)}
             />
@@ -217,6 +218,7 @@ function ConnectForm({
             <Input
               id="phone-number-id"
               placeholder="ID del número de teléfono"
+              autoComplete="off"
               value={phoneNumberId}
               onChange={(e) => setPhoneNumberId(e.target.value)}
             />
@@ -227,6 +229,11 @@ function ConnectForm({
           <Input
             id="token"
             type="password"
+            // "new-password": el navegador no rellena aquí la contraseña del
+            // login (ni el correo en el campo de al lado). "off" lo ignora.
+            autoComplete="new-password"
+            data-1p-ignore
+            data-lpignore="true"
             placeholder={existing ? `Guardado (…${existing.tokenLast4}) — pega uno nuevo para cambiarlo` : "EAAG…"}
             value={token}
             onChange={(e) => {

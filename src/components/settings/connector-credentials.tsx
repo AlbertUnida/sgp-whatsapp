@@ -185,6 +185,9 @@ export function ConnectorCredentials({
               <Input
                 id={`${connector}-${f.name}`}
                 type={f.secret ? "password" : "text"}
+                autoComplete={f.secret ? "new-password" : "off"}
+                data-1p-ignore
+                data-lpignore="true"
                 value={values[f.name] ?? ""}
                 placeholder={
                   f.secret && connection?.secretLast4
