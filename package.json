@@ -22,6 +22,8 @@
     "test:watch": "vitest",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
+    "respaldo": "node --env-file-if-exists=.env scripts/respaldo.mjs",
+    "respaldo:restaurar": "node --env-file-if-exists=.env scripts/respaldo.mjs restaurar",
     "seed:demo": "esbuild scripts/seed/demo.ts --bundle --platform=node --format=esm --outfile=.tmp-seed-demo.mjs --alias:@=./src --packages=external && node .tmp-seed-demo.mjs"
   },
   "dependencies": {
