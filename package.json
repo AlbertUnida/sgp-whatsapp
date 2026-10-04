@@ -10,10 +10,10 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack -H 127.0.0.1",
     "build": "next build",
     "start": "next start",
-    "iniciar": "next build && next start",
+    "iniciar": "next build && next start -H 127.0.0.1",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",

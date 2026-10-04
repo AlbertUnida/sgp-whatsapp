@@ -144,6 +144,20 @@ acción irreversible/costosa). Agrupa TODAS las preguntas bloqueantes al inicio.
 El estado durable son los artefactos SDD en `specs/` (spec/plan/tasks) —
 manténlos al día. Invocable como `/loop-sdd <objetivo>`.
 
+## Historial de sesiones (obligatorio)
+
+[docs/HISTORIAL.md](docs/HISTORIAL.md) es la bitácora de ESTA instancia
+(Ñemongeta CRM): cómo se corre, qué se hizo en cada sesión y los pendientes.
+
+- **Al iniciar**: el hook `SessionStart` (`.claude/settings.json` →
+  `.claude/hooks/historial-inicio.mjs`) inyecta la última sesión y los
+  pendientes. Resúmelos al dueño en 2-3 líneas antes de trabajar.
+- **Al cerrar** (o cuando el dueño diga «cerramos»): agrega la entrada de la
+  sesión arriba de «Sesiones» (fecha, qué se hizo con hash de commit, qué se
+  verificó) y actualiza «Pendientes». Commitea el historial.
+- Al instalar un agente, skill, plugin o MCP nuevo, repite la auditoría
+  ([docs/auditoria-seguridad-2026-10-03.md](docs/auditoria-seguridad-2026-10-03.md)).
+
 ## Memoria persistente
 
 Memoria de archivos en `memory/` (índice `memory/MEMORY.md`, cargado por
