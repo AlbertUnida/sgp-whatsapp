@@ -55,14 +55,19 @@ Hecho:
   (`loading.tsx`), una sola consulta de sesión por página, y los campos de
   credenciales de WhatsApp ya no reciben el correo/contraseña del login por
   autocompletado del navegador.
-- **Auditoría de seguridad** de agentes, skills, plugins, hooks, MCP y puertos:
+- **Auditoría de seguridad** (`9b4f360`) de agentes, skills, plugins, hooks, MCP y puertos:
   ver [auditoria-seguridad-2026-10-03.md](auditoria-seguridad-2026-10-03.md).
   Resultado: nada oculto ni que transmita datos sin autorización. Se cerró la
   exposición de la app (puerto 3000) y de Postgres (5432) a la red local.
-- **Historial**: este documento + hook de inicio de sesión.
+- **Historial** (`9b4f360`): este documento + hook de inicio de sesión
+  (probado a mano: imprime la última sesión y los pendientes).
 
 Verificado: typecheck, lint, 715 tests unitarios, build de producción,
-navegación medida con Playwright, login en vivo.
+navegación medida con Playwright, login en vivo, app y base inaccesibles desde
+la IP de red.
+
+Quedó para el dueño: deshabilitar la regla de firewall de Node.js en redes
+públicas y configurar `RESPALDO_DIR` (ver Pendientes). Todo subido a `origin`.
 
 ### 2026-10-01 — Primera adaptación
 
